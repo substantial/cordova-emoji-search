@@ -4,6 +4,7 @@ import Header from './Header'
 import SearchInput from './SearchInput';
 import SearchResults from './SearchResults';
 import searchEmoji from './search/searchEmoji';
+import './App.css'
 
 const MAX_SEARCH_RESULTS = 20
 
@@ -15,11 +16,13 @@ function App() {
   }
 
   return (
-    <div>
-      <Header />
-      <SearchInput onChangeText={handleSearchChange} />
-      <SearchResults results={searchResults} />
-    </div>
+    <main className="App">
+      <div className="App-container">
+        <Header />
+        <SearchInput onChangeText={handleSearchChange} />
+        <SearchResults results={searchResults} />
+      </div>
+    </main>
   );
 }
 

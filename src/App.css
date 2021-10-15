@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+  .App {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .App-container {
+    max-width: 600px;
+    width: 100%;
+  }
+}
