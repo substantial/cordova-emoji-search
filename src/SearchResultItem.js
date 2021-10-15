@@ -5,7 +5,12 @@ const SearchResultItem = ({ title, symbol }) => {
   const imageSrc = `https://cdn.jsdelivr.net/emojione/assets/png/${codePointHex}.png`
 
   const copyToClipboard = () => {
-    if (navigator && navigator.clipboard) {
+    if (window.cordova && window.cordova.plugins.clipboard) {
+      window.cordova.plugins.clipboard.copy({
+        type: 'text',
+        data: symbol,
+      })
+    } else if (navigator && navigator.clipboard) {
       navigator.clipboard.writeText(symbol)
     }
   }
